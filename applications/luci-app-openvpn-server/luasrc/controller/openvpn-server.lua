@@ -6,12 +6,12 @@ function index()
 		return
 	end
 	
-	entry({"admin", "vpn"}, firstchild(), "VPN", 45).dependent = false
+	entry({"admin", "services"}, firstchild(), "SERVICES", 45).dependent = false
 	
 	local page
 
-	entry({"admin", "vpn", "openvpn-server"}, cbi("openvpn-server/openvpn-server"), _("OpenVPN Server"), 80).dependent=false
-	entry({"admin", "vpn", "openvpn-server","status"},call("act_status")).leaf=true
+	entry({"admin", "services", "openvpn-server"}, cbi("openvpn-server/openvpn-server"), _("OpenVPN Server"), 80).dependent=false
+	entry({"admin", "services", "openvpn-server","status"},call("act_status")).leaf=true
 end
 
 function act_status()
