@@ -46,12 +46,6 @@ if fs.access("/lib/modules/" .. boardinfo.kernel .. "/fast-classifier.ko") then
 	end
 end
 
-if fs.access("/lib/modules/" .. boardinfo.kernel .. "/tcp_bbr.ko") then
-	o = s:option(Flag, "bbr_cca", translate("BBR CCA"))
-	o.default = 0
-	o.description = translate("Using BBR CCA can improve TCP network performance effectively")
-end 
-
 if fs.access("/lib/modules/" .. boardinfo.kernel .. "/xt_FULLCONENAT.ko") then
 	o = s:option(Flag, "fullcone_nat", translate("FullCone NAT"))
 	o.default = 0
