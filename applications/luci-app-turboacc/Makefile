@@ -21,6 +21,7 @@ LUCI_PKGARCH:=all
 define Package/luci-app-turboacc/config
 config PACKAGE_TURBOACC_INCLUDE_OFFLOADING
 	bool "Include Flow Offload"
+	default n if LINUX_4_4
 	default y
 
 config PACKAGE_TURBOACC_INCLUDE_DNSFORWARDER
