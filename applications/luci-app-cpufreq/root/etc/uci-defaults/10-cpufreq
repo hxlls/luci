@@ -23,13 +23,8 @@ case "$DISTRIB_TARGET" in
 		uci_write_config 0 ondemand 200000 716000 10 50
 		;;
 	"ipq60xx/generic")
-		if echo "$CPU_FREQS" | grep -q "1800000"; then
-			# IPQ6010/18/28
-			uci_write_config 0 ondemand 864000 1800000 10 50
-		else
-			# IPQ6000
-			uci_write_config 0 ondemand 864000 1200000 10 50
-		fi
+		# IPQ6000 OVERCLOCK
+		uci_write_config 0 ondemand 1056000 1440000 10 50
 		;;
 	"ipq806x/generic")
 		if echo "$CPU_FREQS" | grep -q "1725000"; then
